@@ -28,8 +28,6 @@ The tax is calculated progressively according to the following rates:
 ## Screenshots
 
 
-![App Screenshot 1](screenshots/screenshot1.png)  
-![App Screenshot 2](screenshots/screenshot2.png)
-![App Screenshot 2](screenshots/screenshot3.png)
-
-
+<img src="screenshots/screenshot1.png" alt="App Screenshot 1" width="500" height="300">
+<img src="screenshots/screenshot2.png" alt="App Screenshot 2" width="500" height="300">
+<img src="screenshots/screenshot3.png" alt="App Screenshot 3" width="500" height="300">
