@@ -9,6 +9,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,12 +17,14 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -61,8 +64,9 @@ fun TaxCalculatorLayout() {
 //Annual income state
     var incomeInput by remember {mutableStateOf("")}
     val income = incomeInput.replace(",", "").toDoubleOrNull() ?: 0.0
+    var roundup by remember { mutableStateOf(false) }
+    val tax = calculateTax(income, roundup)
 
-    val tax = calculateTax(income)
 
     Column(
         modifier = Modifier
@@ -91,7 +95,14 @@ fun TaxCalculatorLayout() {
             modifier = Modifier
         )
 
-        Spacer(modifier = Modifier.height(24.dp))
+//        Spacer(modifier = Modifier.height(24.dp))
+        roundupTax(
+            roundup = roundup,
+            onRoundUpChanged = { roundup = it },
+            modifier = Modifier
+                .padding(bottom = 16.dp)
+                .fillMaxWidth()
+        )
 
         Text(
             text = stringResource(R.string.tax_amount, tax),
@@ -125,6 +136,32 @@ fun EditNumberField(
     )
 }
 
+@Composable
+fun roundupTax(
+    roundup : Boolean,
+    onRoundUpChanged: (Boolean) -> Unit,
+    modifier: Modifier = Modifier
+){
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .wrapContentWidth(Alignment.End),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            text = stringResource(R.string.round_up_tax)
+        )
+        Switch(
+            checked = roundup,
+            onCheckedChange = onRoundUpChanged,
+            modifier = modifier
+                .fillMaxWidth()
+                .wrapContentWidth(Alignment.End)
+        )
+
+    }
+}
+
 /*
  Calculates tax based on Nigeria 2026 Tax Act progressive rates.
  Tax rates:
@@ -136,7 +173,9 @@ fun EditNumberField(
     25% for above ₦50,000,000
 */
 
-private fun calculateTax(annualIncome: Double): String {
+private fun calculateTax(
+    annualIncome: Double,
+    roundup: Boolean): String {
     val tax = when {
         annualIncome <= 800_000 -> 0.0
         annualIncome <= 3_000_000 -> {
@@ -154,6 +193,9 @@ private fun calculateTax(annualIncome: Double): String {
         else -> {
             (2_200_000 * 0.15) + (9_000_000 * 0.18) + (13_000_000 * 0.21) + (25_000_000 * 0.23) + (annualIncome - 50_000_000) * 0.25
         }
+    }
+    if (roundup){
+        return "₦${String.format("%,.2f", kotlin.math.ceil(tax))}"
     }
     return "₦${String.format("%,.2f", tax)}"
 }

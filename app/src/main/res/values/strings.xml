@@ -19,4 +19,5 @@
     <string name="calculate_tax">Tax Calculator</string>
     <string name="annual_income">Annual Income (₦)</string>
     <string name="tax_amount">Tax: %s</string>
+    <string name="round_up_tax">Round Up Tax</string>
 </resources>
