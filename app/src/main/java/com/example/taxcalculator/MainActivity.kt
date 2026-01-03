@@ -37,14 +37,14 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.taxcalculator.ui.theme.TipTimeTheme
+import com.example.taxcalculator.ui.theme.TaxCalculatorTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
-            TipTimeTheme {
+            TaxCalculatorTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                 ) {
@@ -161,7 +161,7 @@ private fun calculateTax(annualIncome: Double): String {
 @Preview(showBackground = true)
 @Composable
 fun TaxCalculatorLayoutPreview() {
-    TipTimeTheme {
+    TaxCalculatorTheme {
         TaxCalculatorLayout()
     }
 }
