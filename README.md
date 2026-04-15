@@ -20,9 +20,6 @@ This is a simple Android app built with Kotlin and Jetpack Compose. It works lik
 - Next `N25,000,000` at `23%`
 - Any amount above `N50,000,000` at `25%`
 
-## Project style
-
-The code is intentionally kept simple and readable so it still feels like a small student or beginner-level Android project.
 
 ## Screenshots
 
