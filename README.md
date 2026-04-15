@@ -30,5 +30,5 @@ The code is intentionally kept simple and readable so it still feels like a smal
     <img src="screenshots/screenshot1.png" alt="App Screenshot 1" width="220" height="500" />
     <img src="screenshots/screenshot2.png" alt="App Screenshot 2" width="220" height="500" />
     <img src="screenshots/screenshot3.png" alt="App Screenshot 3" width="220" height="500" />
-    <img src="screenshots/screenshot4.png" alt="App Screenshot 3" width="220" height="500" />
+    <img src="screenshots/screenshot4.png" alt="App Screenshot 4" width="220" height="500" />
 </div>
