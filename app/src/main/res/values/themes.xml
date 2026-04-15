@@ -15,5 +15,5 @@
   ~ limitations under the License.
   -->
 <resources>
-    <style name="Theme.TipTime" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.TaxCalculator" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

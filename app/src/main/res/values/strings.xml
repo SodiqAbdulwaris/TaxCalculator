@@ -15,9 +15,5 @@
   ~ limitations under the License.
   -->
 <resources>
-    <string name="app_name">Tax Calculator (OOAD Project Grp 5)</string>
-    <string name="calculate_tax">Tax Calculator</string>
-    <string name="annual_income">Annual Income (₦)</string>
-    <string name="tax_amount">Tax: %s</string>
-    <string name="round_up_tax">Round Up Tax</string>
+    <string name="app_name">Nigeria Tax Calculator</string>
 </resources>

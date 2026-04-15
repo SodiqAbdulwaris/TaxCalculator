@@ -1,29 +1,28 @@
 
-# Tax Calculator
+# Nigeria Tax Calculator
 
-An Android application that calculates personal income tax based on the user's annual income using the **2026 Nigerian progressive tax rates**. 
-The app provides a simple, intuitive interface built with **Jetpack Compose** for a smooth user experience.
+This is a simple Android app built with Kotlin and Jetpack Compose. It works like a beginner-friendly calculator and helps users estimate how much personal income tax they should pay with the 2026 Nigerian tax bands.
 
-## Features
+## What the app does
 
-- Calculate personal income tax based on annual income.
-- Implements **Nigerian 2026 Tax Act** progressive rates.
-- Clean and intuitive user interface.
-- Quick and accurate tax computation.
+- Lets the user enter annual taxable income with calculator-style buttons.
+- Calculates total annual tax.
+- Shows estimated monthly tax.
+- Shows the effective tax rate.
+- Displays a simple breakdown of how much tax comes from each tax band.
 
-## Tax Brackets (2026 Nigeria)
+## 2026 Nigerian tax bands used in the app
 
-The tax is calculated progressively according to the following rates:
+- First `N800,000` at `0%`
+- Next `N2,200,000` at `15%`
+- Next `N9,000,000` at `18%`
+- Next `N13,000,000` at `21%`
+- Next `N25,000,000` at `23%`
+- Any amount above `N50,000,000` at `25%`
 
-- **0%** for the first ₦800,000
-- **15%** for income from ₦800,001 to ₦3,000,000
-- **18%** for income from ₦3,000,001 to ₦12,000,000
-- **21%** for income from ₦12,000,001 to ₦25,000,000
-- **23%** for income from ₦25,000,001 to ₦50,000,000
-- **25%** for income above ₦50,000,000
+## Project style
 
-> Example: If your annual income is ₦5,000,000, 
-> your tax will be calculated progressively across each bracket, not just a single rate.
+The code is intentionally kept simple and readable so it still feels like a small student or beginner-level Android project.
 
 ## Screenshots
 
@@ -31,4 +30,5 @@ The tax is calculated progressively according to the following rates:
     <img src="screenshots/screenshot1.png" alt="App Screenshot 1" width="220" height="500" />
     <img src="screenshots/screenshot2.png" alt="App Screenshot 2" width="220" height="500" />
     <img src="screenshots/screenshot3.png" alt="App Screenshot 3" width="220" height="500" />
+    <img src="screenshots/screenshot4.png" alt="App Screenshot 3" width="220" height="500" />
 </div>
